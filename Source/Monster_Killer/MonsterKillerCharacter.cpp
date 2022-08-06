@@ -5,6 +5,7 @@
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
+#include "DrawDebugHelpers.h"
 
 // Sets default values
 AMonsterKillerCharacter::AMonsterKillerCharacter()
@@ -68,25 +69,60 @@ void AMonsterKillerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AMonsterKillerCharacter::OnFire);
+
+	PlayerInputComponent->BindAxis("MoveFoward", this, &AMonsterKillerCharacter::MoveFoward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AMonsterKillerCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("Turn", this, &AMonsterKillerCharacter::TurnAtRate);
+	PlayerInputComponent->BindAxis("LookUp", this, &AMonsterKillerCharacter::LookAtRate);
+
 }
 
 void AMonsterKillerCharacter::OnFire()
 {
+
+
+	FHitResult OutHit;
+	FVector Start = GunMesh->GetComponentLocation();
+	FVector FowardVector = FirstPersonCamera->GetForwardVector();
+	FVector End = ((FowardVector * 6000.0f + Start));
+	FCollisionQueryParams CollisionParams;
+
+	DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 5.0f);
+	bool isHit = GetWorld()->LineTraceSingleByChannel(OutHit, Start, End, ECC_Visibility, CollisionParams);
+
+	if (isHit && OutHit.bBlockingHit) {
+		if (GEngine) {
+			GEngine->AddOnScreenDebugMessage(-1,10.0f,FColor::Red,FString::Printf(TEXT("You are hitting: %s"), *OutHit.GetActor()->GetName()));
+			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Purple, FString::Printf(TEXT("Impact Point: %s"), *OutHit.ImpactPoint.ToString()));
+			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Blue, FString::Printf(TEXT("Impact Normal: %s"), *OutHit.ImpactNormal.ToString()));
+		}
+	}
 }
+
 
 void AMonsterKillerCharacter::MoveFoward(float Value)
 {
+	if (Value != 0.0f) {
+		AddMovementInput(GetActorForwardVector(), Value);
+	}
 }
 
 void AMonsterKillerCharacter::MoveRight(float Value)
 {
+	if (Value != 0.0f) {
+		AddMovementInput(GetActorRightVector(), Value);
+	}
 }
 
 void AMonsterKillerCharacter::TurnAtRate(float Rate)
 {
+	AddControllerYawInput(Rate * TurnRate * GetWorld()->GetDeltaSeconds());
 }
 
 void AMonsterKillerCharacter::LookAtRate(float Rate)
 {
+	AddControllerPitchInput(Rate * TurnRate * GetWorld()->GetDeltaSeconds());
 }
 
