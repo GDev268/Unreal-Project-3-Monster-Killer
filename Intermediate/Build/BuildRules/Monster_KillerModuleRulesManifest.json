@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"E:\\Unreal Projects\\3-Monster_Killer\\Monster_Killer\\Source\\Monster_Killer\\Monster_Killer.Build.cs",
+		"E:\\Unreal Projects\\3-Monster_Killer\\Monster_Killer\\Source\\Monster_Killer.Target.cs",
+		"E:\\Unreal Projects\\3-Monster_Killer\\Monster_Killer\\Source\\Monster_KillerEditor.Target.cs"
+	],
+	"EngineVersion": "4.27.2"
+}

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Monster_Killer.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{48E75E6F-8CCA-49B8-B201-A7FC4C81CADC}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Monster_Killer.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\Monster_KillerEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{6C950F8E-3DE0-4E6B-950E-E317E724A49D}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Monster_Killer">
+      <UniqueIdentifier>{D2457604-E0D7-48B7-96F9-8F0AFF15DD04}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Monster_Killer\MonsterKillerCharacter.cpp">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Monster_Killer\MonsterKillerCharacter.h">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Monster_Killer\MonsterKillerGamemode.cpp">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Monster_Killer\MonsterKillerGamemode.h">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\Monster_Killer\Monster_Killer.Build.cs">
+      <Filter>Source\Monster_Killer</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Monster_Killer\Monster_Killer.cpp">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Monster_Killer\Monster_Killer.h">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Monster_Killer\Monster_KillerCharacter.cpp">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Monster_Killer\Monster_KillerCharacter.h">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Monster_Killer\Monster_KillerGameMode.cpp">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Monster_Killer\Monster_KillerGameMode.h">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Monster_Killer\Monster_KillerHUD.cpp">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Monster_Killer\Monster_KillerHUD.h">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Monster_Killer\Monster_KillerProjectile.cpp">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Monster_Killer\Monster_KillerProjectile.h">
+      <Filter>Source\Monster_Killer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
